@@ -1,0 +1,13 @@
+[Unit]
+Description=Get hetzner LB metrics
+StartLimitIntervalSec=0
+After=network-online.target
+
+[Service]
+Type=simple
+RemainAfterExit=no
+ExecStart=python /opt/hetzner_lb_metrics/server.py
+
+
+[Install]
+WantedBy=network-online.target
